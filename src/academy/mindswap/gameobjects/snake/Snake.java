@@ -46,4 +46,3 @@ public class Snake {
         return 0;
     }
 }
-

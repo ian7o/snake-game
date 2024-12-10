@@ -14,6 +14,12 @@ public class Game {
     private int delay;
 
     public Game(int cols, int rows, int delay) {
+
+        /*
+        to pensando em colocar o cols e rowls na posição da cobra
+        porque se não era preciso o snake = new Snake();
+         */
+
         Field.init(cols, rows);
         snake = new Snake();
         this.delay = delay;
