@@ -1,5 +1,6 @@
 package academy.mindswap.field;
 
+import academy.mindswap.Game;
 import academy.mindswap.gameobjects.fruit.Fruit;
 import academy.mindswap.gameobjects.snake.Snake;
 import com.googlecode.lanterna.TerminalFacade;
@@ -19,9 +20,6 @@ public final class Field {
     private static int height;
     private static Screen screen;
     private static ScreenWriter screenWriter;
-
-    private Field() {
-    }
 
     public static void init(int width, int height) {
 
@@ -44,7 +42,7 @@ public final class Field {
 
         Terminal.Color snakeColor = Terminal.Color.GREEN;
 
-        if (!snake.isAlive()){
+        if (!snake.isAlive()) {
             snakeColor = Terminal.Color.RED;
         }
 
@@ -82,7 +80,11 @@ public final class Field {
     }
 
     public static void drawFruit(Fruit fruit) {
-        screen.putString(fruit.getPosition().getCol(), fruit.getPosition().getRow(), FRUIT_STRING, Terminal.Color.MAGENTA, null);
+        screen.putString(fruit.getPosition().getCol(), fruit.getPosition().getRow(), FRUIT_STRING, fruit.getRandomColor(), null);
+    }
+
+    public static void drawScoreboard(Scoreboard scoreboard) {
+        screen.putString(scoreboard.getScoreboardPosition().getCol(), scoreboard.getScoreboardPosition().getRow(), Scoreboard.getPlacarSign() + Game.getPointCounter(), Terminal.Color.GREEN, null);
     }
 
     public static int getWidth() {
