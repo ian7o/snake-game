@@ -56,9 +56,9 @@ public final class Field {
         while(var3.hasNext()) {
             Position p = (Position)var3.next();
             if (!p.equals(head)) {
-                screen.putString(p.getCol(), p.getRow(), "#", snakeColor, (Terminal.Color)null, new ScreenCharacterStyle[0]);
+                screen.putString(p.getCol(), p.getRow(), "#", snakeColor, (Terminal.Color)null);
             } else {
-                screen.putString(p.getCol(), p.getRow(), "0", snakeColor, (Terminal.Color)null, new ScreenCharacterStyle[0]);
+                screen.putString(p.getCol(), p.getRow(), "0", snakeColor, (Terminal.Color)null);
             }
         }
 
@@ -89,11 +89,11 @@ public final class Field {
     }
 
     public static void drawFruit(Fruit fruit) {
-        screen.putString(fruit.getPosition().getCol(), fruit.getPosition().getRow(), "@", fruit.getRandomColor(), (Terminal.Color)null, new ScreenCharacterStyle[0]);
+        screen.putString(fruit.getPosition().getCol(), fruit.getPosition().getRow(), "@", fruit.getRandomColor(), (Terminal.Color)null);
     }
 
     public static void drawScoreboard(Scoreboard scoreboard) {
-        screen.putString(scoreboard.getScoreboardPosition().getCol(), scoreboard.getScoreboardPosition().getRow(), Scoreboard.getPlacarSign() + Game.getPointCounter(), Color.GREEN, (Terminal.Color)null, new ScreenCharacterStyle[0]);
+        screen.putString(scoreboard.getScoreboardPosition().getCol(), scoreboard.getScoreboardPosition().getRow(), Scoreboard.getPlacarSign() + Game.getPointCounter(), Color.GREEN, (Terminal.Color)null);
     }
 
     public static int getWidth() {
