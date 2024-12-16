@@ -11,7 +11,6 @@ import academy.mindswap.gameobjects.snake.Snake;
 import com.googlecode.lanterna.TerminalFacade;
 import com.googlecode.lanterna.input.Key;
 import com.googlecode.lanterna.screen.Screen;
-import com.googlecode.lanterna.screen.ScreenCharacterStyle;
 import com.googlecode.lanterna.screen.ScreenWriter;
 import com.googlecode.lanterna.terminal.Terminal;
 import com.googlecode.lanterna.terminal.TerminalPosition;
@@ -67,19 +66,19 @@ public final class Field {
 
     public static void clearTail(Snake snake) {
         Position tail = snake.getTail();
-        screen.putString(tail.getCol(), tail.getRow(), " ", (Terminal.Color)null, (Terminal.Color)null, new ScreenCharacterStyle[0]);
+        screen.putString(tail.getCol(), tail.getRow(), " ", (Terminal.Color) null, (Terminal.Color)null);
     }
 
     private static void drawWalls() {
         int j;
         for(j = 0; j < width; ++j) {
-            screenWriter.drawString(j, 0, "▒", new ScreenCharacterStyle[0]);
-            screenWriter.drawString(j, height - 1, "▒", new ScreenCharacterStyle[0]);
+            screenWriter.drawString(j, 0, "▒");
+            screenWriter.drawString(j, height - 1, "▒");
         }
 
         for(j = 0; j < height; ++j) {
-            screenWriter.drawString(0, j, "▒", new ScreenCharacterStyle[0]);
-            screenWriter.drawString(width - 1, j, "▒", new ScreenCharacterStyle[0]);
+            screenWriter.drawString(0, j, "▒");
+            screenWriter.drawString(width - 1, j, "▒");
         }
 
     }
