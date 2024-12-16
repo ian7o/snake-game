@@ -15,12 +15,7 @@ public class Game {
     private Scoreboard scoreboard;
 
     private int delay;
-/*
-para parar é facil
-é fazer um input para para o botao p
-se o botao p for apertado define o delay para 10000
-e quando for apertado de novo definir o deley para o normal
- */
+
 
     public Game(int cols, int rows, int delay) {
         Field.init(cols, rows);

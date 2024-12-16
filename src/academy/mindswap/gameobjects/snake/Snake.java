@@ -11,9 +11,9 @@ import java.util.LinkedList;
 
 public class Snake {
     public static LinkedList<Position> body;
-    public static final int SNAKE_INITIAL_SIZE = 2;
-    public Direction direction;
-    public boolean alive = true;
+    private static final int SNAKE_INITIAL_SIZE = 2;
+    private Direction direction;
+    private boolean alive = true;
 
 
     public void increaseSize() {
